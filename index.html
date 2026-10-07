@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mamadou Kalirou DIALLO</title>
+    <style>
+        :root { --primary: #0d6efd; --dark: #212529; --light: #f8f9fa; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        header { background-color: var(--dark); color: white; padding: 2rem 1rem; text-align: center; }
+        nav { background: #343a40; padding: 0.5rem; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        nav a:hover { color: var(--primary); }
+        section { max-width: 900px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: var(--dark); }
+        h2 { border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; }
+        .tag { background: #e9ecef; border-left: 4px solid var(--primary); padding: 0.5rem 1rem; margin: 0.5rem 0; display: inline-block; }
+        .project-card, .exp-card { border: 1px solid #dee2e6; border-radius: 5px; padding: 1rem; margin-bottom: 1.5rem; }
+        footer { text-align: center; padding: 1.5rem; background: var(--dark); color: white; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mamadou Kalirou DIALLO</h1>
+        <p>Étudiant en BTS SIO option SISR | Administration Réseau & Systèmes</p>
+    </header>
+
+    <nav>
+        <a href="#about">À propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#experiences">Expériences</a>
+        <a href="#veille">Veille Technologique</a>
+    </nav>
+
+    <section id="about">
+        <h2>À propos de moi</h2>
+        <p>Étudiant en BTS SIO option SISR (Solutions d'Infrastructure, Systèmes et Réseaux) au lycée Parc de Vilgenis à Massy. Titulaire d'un Bac Pro Systèmes Numériques et Audiovisuels (2025), je me passionne pour la gestion d'infrastructures informatiques, le support technique et la sécurité des réseaux.</p>
+        <p><strong>Contact :</strong> m.kalirou05@gmail.com | 06 61 90 95 61 | Athis-Mons (91)</p>
+    </section>
+
+    <section id="projets">
+        <h2>Projets d'Épreuve E4 (Bloc 3)</h2>
+
+        <div class="project-card">
+            <h3>Extension d'une architecture réseau & Sécurisation d'un service SMB</h3>
+            <p><strong>Contexte :</strong> Conception et déploiement d'un sous-réseau sécurisé hébergeant un serveur de partage SMB (Debian 13 CLI) sous l'environnement virtuel GNS3.</p>
+            <h4>Missions réalisées :</h4>
+            <ul>
+                <li><strong>Découpage VLSM :</strong> Calcul de la table d'adressage IP (SW1: 3100 postes, SW2: 2150 postes, nouveau sous-réseau: 78 postes).</li>
+                <li><strong>Configuration Cisco :</strong> Paramétrage des interfaces du routeur R1, pools DHCP et exclusions.</li>
+                <li><strong>Sécurisation Debian 13 :</strong> Restriction des accès SSH au seul poste administrateur, règles de pare-feu et protection anti-brute force (bannissement 1h après 6 échecs).</li>
+                <li><strong>Habilitations :</strong> Gestion des comptes utilisateurs (accès SSH pour <code>nas_admin</code>, shell désactivé pour <code>smb_svc</code>, verrouillage SSH de <code>root</code>).</li>
+            </ul>
+            <div class="tag">Compétences : Gérer le patrimoine informatique | Traiter les demandes système/réseau | Travailler en mode projet</div>
+        </div>
+    </section>
+
+    <section id="experiences">
+        <h2>Expériences Professionnelles & Stages</h2>
+
+        <div class="exp-card">
+            <h3>Technicien Audiovisuel — Impact Événement (Longjumeau)</h3>
+            <p><em>Mars 2024 – Mai 2024</em></p>
+            <p>Installation, configuration et mise en service de systèmes audio/vidéo/lumière. Tests de fonctionnement et maintenance du parc matériel.</p>
+        </div>
+
+        <div class="exp-card">
+            <h3>Technicien Support IT — Collège Saint-Charles (Athis-Mons)</h3>
+            <p><em>Avril 2022</em></p>
+            <p>Installation, dépannage et configuration de postes informatiques. Diagnostic de pannes matérielles et logicielles.</p>
+        </div>
+
+        <div class="exp-card">
+            <h3>Technicien Informatique — BH-TECH (Saint-Denis)</h3>
+            <p><em>Mai 2022 – Juin 2022</em></p>
+            <p>Assemblage, installation et configuration d'ordinateurs clients.</p>
+        </div>
+    </section>
+
+    <section id="veille">
+        <h2>Veille Technologique</h2>
+        <p><strong>Sujet :</strong> L'implémentation de l'architecture Zero Trust dans la sécurisation des réseaux d'entreprise.</p>
+        <p><strong>Outil de collecte :</strong> Feedly (Agrégateur de flux RSS)</p>
+        <p><strong>Mots-clés suivis :</strong> Zero Trust Architecture, Sécurité Réseau, IAM, Micro-segmentation, AFA/MFA.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mamadou Kalirou DIALLO — Portfolio BTS SIO SISR</p>
+    </footer>
+
+</body>
+</html>

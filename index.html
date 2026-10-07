@@ -4,90 +4,239 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Mamadou Kalirou DIALLO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #0d6efd; --dark: #212529; --light: #f8f9fa; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--light); color: var(--dark); line-height: 1.6; }
-        header { background-color: var(--dark); color: white; padding: 2rem 1rem; text-align: center; }
-        nav { background: #343a40; padding: 0.5rem; text-align: center; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-        nav a:hover { color: var(--primary); }
-        section { max-width: 900px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        h1, h2, h3 { color: var(--dark); }
-        h2 { border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; }
-        .tag { background: #e9ecef; border-left: 4px solid var(--primary); padding: 0.5rem 1rem; margin: 0.5rem 0; display: inline-block; }
-        .project-card, .exp-card { border: 1px solid #dee2e6; border-radius: 5px; padding: 1rem; margin-bottom: 1.5rem; }
-        footer { text-align: center; padding: 1.5rem; background: var(--dark); color: white; margin-top: 2rem; }
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --border: #334155;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 3rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 1rem 2rem;
+            background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.8rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem;
+            text-align: center;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--accent); }
+
+        .container {
+            max-width: 950px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card .date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        ul { margin-left: 1.2rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.4rem; color: var(--text-muted); }
+
+        .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: var(--accent-glow);
+            color: var(--accent);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Mamadou Kalirou DIALLO</h1>
-        <p>Étudiant en BTS SIO option SISR | Administration Réseau & Systèmes</p>
+        <p class="subtitle">Étudiant en BTS SIO option SISR — Lycée Parc de Vilgenis</p>
     </header>
 
     <nav>
         <a href="#about">À propos</a>
-        <a href="#projets">Projets</a>
+        <a href="#projets">Projets E4</a>
         <a href="#experiences">Expériences</a>
         <a href="#veille">Veille Technologique</a>
     </nav>
 
-    <section id="about">
-        <h2>À propos de moi</h2>
-        <p>Étudiant en BTS SIO option SISR (Solutions d'Infrastructure, Systèmes et Réseaux) au lycée Parc de Vilgenis à Massy. Titulaire d'un Bac Pro Systèmes Numériques et Audiovisuels (2025), je me passionne pour la gestion d'infrastructures informatiques, le support technique et la sécurité des réseaux.</p>
-        <p><strong>Contact :</strong> m.kalirou05@gmail.com | 06 61 90 95 61 | Athis-Mons (91)</p>
-    </section>
+    <div class="container">
 
-    <section id="projets">
-        <h2>Projets d'Épreuve E4 (Bloc 3)</h2>
+        <section id="about">
+            <h2>À propos</h2>
+            <div class="card">
+                <p>Étudiant en BTS SIO option SISR (Solutions d'Infrastructure, Systèmes et Réseaux) au lycée Parc de Vilgenis à Massy[cite: 8]. Titulaire d'un Bac Pro Systèmes Numériques (2025)[cite: 8], je me spécialise dans la gestion des réseaux, la sécurisation des systèmes et le support informatique[cite: 8].</p>
+                <div class="tag-group">
+                    <span class="tag">m.kalirou05@gmail.com</span>
+                    <span class="tag">06 61 90 95 61</span>
+                    <span class="tag">Athis-Mons (91)</span>
+                </div>
+            </div>
+        </section>
 
-        <div class="project-card">
-            <h3>Extension d'une architecture réseau & Sécurisation d'un service SMB</h3>
-            <p><strong>Contexte :</strong> Conception et déploiement d'un sous-réseau sécurisé hébergeant un serveur de partage SMB (Debian 13 CLI) sous l'environnement virtuel GNS3.</p>
-            <h4>Missions réalisées :</h4>
-            <ul>
-                <li><strong>Découpage VLSM :</strong> Calcul de la table d'adressage IP (SW1: 3100 postes, SW2: 2150 postes, nouveau sous-réseau: 78 postes).</li>
-                <li><strong>Configuration Cisco :</strong> Paramétrage des interfaces du routeur R1, pools DHCP et exclusions.</li>
-                <li><strong>Sécurisation Debian 13 :</strong> Restriction des accès SSH au seul poste administrateur, règles de pare-feu et protection anti-brute force (bannissement 1h après 6 échecs).</li>
-                <li><strong>Habilitations :</strong> Gestion des comptes utilisateurs (accès SSH pour <code>nas_admin</code>, shell désactivé pour <code>smb_svc</code>, verrouillage SSH de <code>root</code>).</li>
-            </ul>
-            <div class="tag">Compétences : Gérer le patrimoine informatique | Traiter les demandes système/réseau | Travailler en mode projet</div>
-        </div>
-    </section>
+        <section id="projets">
+            <h2>Projets Réseau & Système (E4)</h2>
+            <div class="card">
+                <h3>Extension d'une architecture réseau & Sécurisation SMB</h3>
+                <span class="date">Projet BTS SIO SISR — Session 2025-2026</span>
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">Conception et déploiement sous GNS3 d'un sous-réseau sécurisé hébergeant un service de partage SMB sur Debian 13 CLI[cite: 9, 10, 12].</p>
+                <ul>
+                    <li><strong>Calcul d'adressage (VLSM) :</strong> Structuration des sous-réseaux pour SW1 (3100 postes), SW2 (2150 postes) et la zone SMB (78 postes)[cite: 9, 10].</li>
+                    <li><strong>Routeur Cisco :</strong> Configuration des interfaces et des pools DHCP sur routeur Cisco 3725[cite: 11].</li>
+                    <li><strong>Sécurisation Debian 13 :</strong> Filtrage IP strict pour SSH, fermeture des ports non essentiels et pare-feu[cite: 9].</li>
+                    <li><strong>Protection Anti-Brute Force :</strong> Configuration Fail2ban (bannissement d'1h après 6 tentatives d'échec en 30 min)[cite: 9].</li>
+                    <li><strong>Gestion des accès :</strong> Compte <code>nas_admin</code> (SSH), shell désactivé pour <code>smb_svc</code> et verrouillage de <code>root</code>[cite: 9].</li>
+                </ul>
+                <div class="tag-group">
+                    <span class="tag">GNS3</span>
+                    <span class="tag">Debian 13</span>
+                    <span class="tag">Cisco IOS</span>
+                    <span class="tag">SMB / Samba</span>
+                    <span class="tag">Fail2ban</span>
+                    <span class="tag">VLSM</span>
+                </div>
+            </div>
+        </section>
 
-    <section id="experiences">
-        <h2>Expériences Professionnelles & Stages</h2>
+        <section id="experiences">
+            <h2>Expériences Professionnelles</h2>
+            <div class="card">
+                <h3>Technicien Audiovisuel — Impact Événement</h3>
+                <span class="date">Mars 2024 – Mai 2024 | Longjumeau</span>
+                <p style="color: var(--text-muted);">Installation, configuration et mise en service d'équipements audio/vidéo/lumière. Recette et maintenance du matériel[cite: 8].</p>
+            </div>
+            <div class="card">
+                <h3>Technicien Support IT — Collège Saint-Charles</h3>
+                <span class="date">Avril 2022 | Athis-Mons</span>
+                <p style="color: var(--text-muted);">Support de proximité, déploiement de postes informatiques et diagnostic de pannes matérielles et logicielles[cite: 8].</p>
+            </div>
+            <div class="card">
+                <h3>Technicien Informatique — BH-TECH</h3>
+                <span class="date">Mai 2022 – Juin 2022 | Saint-Denis</span>
+                <p style="color: var(--text-muted);">Assemblage, préparation et configuration de machines pour clients professionnels[cite: 8].</p>
+            </div>
+        </section>
 
-        <div class="exp-card">
-            <h3>Technicien Audiovisuel — Impact Événement (Longjumeau)</h3>
-            <p><em>Mars 2024 – Mai 2024</em></p>
-            <p>Installation, configuration et mise en service de systèmes audio/vidéo/lumière. Tests de fonctionnement et maintenance du parc matériel.</p>
-        </div>
+        <section id="veille">
+            <h2>Veille Technologique</h2>
+            <div class="card">
+                <h3>L'architecture Zero Trust en Entreprise</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">Suivi continu des évolutions autour du modèle de sécurité « Ne jamais faire confiance, toujours vérifier »[cite: 2, 3].</p>
+                <ul>
+                    <li><strong>Outil de collecte :</strong> Feedly (Agrégation de flux RSS)[cite: 1, 2].</li>
+                    <li><strong>Axes suivis :</strong> Micro-segmentation, contrôle d'accès IAM, Authentification Forte (MFA), ZTNA[cite: 2].</li>
+                </ul>
+                <div class="tag-group">
+                    <span class="tag">Zero Trust</span>
+                    <span class="tag">Feedly</span>
+                    <span class="tag">Cybersecurité</span>
+                    <span class="tag">IAM</span>
+                </div>
+            </div>
+        </section>
 
-        <div class="exp-card">
-            <h3>Technicien Support IT — Collège Saint-Charles (Athis-Mons)</h3>
-            <p><em>Avril 2022</em></p>
-            <p>Installation, dépannage et configuration de postes informatiques. Diagnostic de pannes matérielles et logicielles.</p>
-        </div>
+        <footer>
+            <p>&copy; 2026 Mamadou Kalirou DIALLO — Portfolio BTS SIO SISR</p>
+        </footer>
 
-        <div class="exp-card">
-            <h3>Technicien Informatique — BH-TECH (Saint-Denis)</h3>
-            <p><em>Mai 2022 – Juin 2022</em></p>
-            <p>Assemblage, installation et configuration d'ordinateurs clients.</p>
-        </div>
-    </section>
-
-    <section id="veille">
-        <h2>Veille Technologique</h2>
-        <p><strong>Sujet :</strong> L'implémentation de l'architecture Zero Trust dans la sécurisation des réseaux d'entreprise.</p>
-        <p><strong>Outil de collecte :</strong> Feedly (Agrégateur de flux RSS)</p>
-        <p><strong>Mots-clés suivis :</strong> Zero Trust Architecture, Sécurité Réseau, IAM, Micro-segmentation, AFA/MFA.</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Mamadou Kalirou DIALLO — Portfolio BTS SIO SISR</p>
-    </footer>
+    </div>
 
 </body>
 </html>

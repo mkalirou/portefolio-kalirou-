@@ -194,15 +194,28 @@
         .article-box {
             background-color: rgba(15, 23, 42, 0.6);
             border-left: 3px solid var(--primary);
-            padding: 1rem;
+            padding: 1.2rem;
             margin-top: 1rem;
             border-radius: 0 8px 8px 0;
         }
 
         .article-box h4 {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: var(--text-main);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .article-link {
+            display: inline-block;
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .article-link:hover {
+            text-decoration: underline;
         }
 
         /* Responsive Mobile */
@@ -318,22 +331,25 @@
                     <div class="card-date">Sujet principal</div>
                 </div>
                 <p class="card-desc">
-                    Suivi axé sur le principe de sécurité « Ne jamais faire confiance, toujours vérifier »[cite: 2, 3]. Flux collectés via <strong>Feedly</strong>[cite: 1, 2].
+                    Suivi axé sur le principe de sécurité « Ne jamais faire confiance, toujours vérifier » (Never Trust, Always Verify)[cite: 2, 3]. Flux collectés via l'outil <strong>Feedly</strong>[cite: 1, 2].
                 </p>
 
                 <div class="article-box">
-                    <h4>1. Passage du VPN classique au ZTNA</h4>
+                    <h4>1. Passage du VPN classique au ZTNA (Zero Trust Network Access)</h4>
                     <p class="card-desc">Remplacement des accès VPN globaux par un contrôle d'accès au niveau applicatif (ZTNA) pour limiter la surface d'attaque.</p>
+                    <a href="https://www.zdnet.fr" target="_blank" class="article-link">🔗 Lire la source (ZDNet) &rarr;</a>
                 </div>
 
                 <div class="article-box">
-                    <h4>2. Isolation et Micro-segmentation</h4>
+                    <h4>2. Isolation et Micro-segmentation des sous-réseaux</h4>
                     <p class="card-desc">Cloisonnement strict des flux réseau inter-serveurs afin de bloquer les déplacements latéraux des logiciels malveillants.</p>
+                    <a href="https://www.lemondeinformatique.fr" target="_blank" class="article-link">🔗 Lire la source (Le Monde Informatique) &rarr;</a>
                 </div>
 
                 <div class="article-box">
-                    <h4>3. Authentification Forte (MFA) & Contrôle IAM</h4>
-                    <p class="card-desc">Vérification continue de l'identité des utilisateurs et de l'état de conformité des équipements connectés.</p>
+                    <h4>3. Authentification Forte (MFA) & Contrôle de Posture IAM</h4>
+                    <p class="card-desc">Vérification continue de l'identité des utilisateurs et de l'état de conformité des équipements connectés au réseau.</p>
+                    <a href="https://www.ssi.gouv.fr" target="_blank" class="article-link">🔗 Consulter la recommandation ANSSI &rarr;</a>
                 </div>
 
                 <div class="tags" style="margin-top: 1.5rem;">
